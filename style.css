@@ -2,12 +2,26 @@ HTML, BODY {height: 100%;}
 * {margin: 0; padding: 0;}
 
 BODY {font: normal 1.2em/1.5 Helvetica, Arial, sans-serif;}
-
-.b-info dt {float: left; width: 100px; color: #888;}
-.b-info {position: absolute; border-left: 1px solid gray; padding-left: 30px; top: 50%; left: 50%; margin: -70px 0 0 -175px; width: 350px;}
-
 a:visited {color: #000;}
 a {color: #000;}
 
+.b-info    {position: absolute; border-left: 1px solid gray; padding-left: 30px; top: 50%; left: 50%; margin: -70px 0 0 -175px; width: 350px;}
+.b-info dt {float: left; width: 100px; color: #888;}
+
 .b-nav   {float: left; margin: 10px;}
 .b-nav a {float: left; margin-right: 10px;}
+
+.b-cv            {font: 15px Arial, Verdana, Helvetica, sans-serif; float: left;}
+.b-cv .b-section {margin: 10px;}
+.b-cv .b-inner   {margin: 20px;}
+.b-cv h1         {margin: 10px; font-size: 19px;}
+.b-cv h2         {font-size: 15px;}
+.b-cv dl         {line-height: 21px; margin: 20px;}
+.b-cv dd         {white-space: nowrap;}
+.b-cv dt         {float: left; width: 130px;}
+.b-cv p          {line-height: 20px;}
+.b-cv table      {border-collapse: collapse;}
+.b-cv table td   {padding: 5px; }
+
+.b-skills__primary td {border: 1px solid #000;}
+.b-skills__secondary {margin-top: 40px;}
