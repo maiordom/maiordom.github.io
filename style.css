@@ -1,2 +1,13 @@
 HTML, BODY {height: 100%;}
 * {margin: 0; padding: 0;}
+
+BODY {font: normal 1.2em/1.5 Helvetica, Arial, sans-serif;}
+
+.b-info dt {float: left; width: 100px; color: #888;}
+.b-info {position: absolute; border-left: 1px solid gray; padding-left: 30px; top: 50%; left: 50%; margin: -70px 0 0 -175px; width: 350px;}
+
+a:visited {color: #000;}
+a {color: #000;}
+
+.b-nav   {float: left; margin: 10px;}
+.b-nav a {float: left; margin-right: 10px;}
