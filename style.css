@@ -4,6 +4,8 @@ HTML, BODY {height: 100%;}
 BODY {font: normal 1.2em/1.5 Helvetica, Arial, sans-serif;}
 a:visited {color: #000;}
 a {color: #000;}
+ul {list-style: none;}
+.clear-fix {clear: both;}
 
 .b-info    {position: absolute; border-left: 1px solid gray; padding-left: 30px; top: 50%; left: 50%; margin: -70px 0 0 -175px; width: 350px;}
 .b-info dt {float: left; width: 100px; color: #888;}
@@ -25,3 +27,18 @@ a {color: #000;}
 
 .b-skills__primary td {border: 1px solid #000;}
 .b-skills__secondary {margin-top: 40px;}
+
+.b-code                   {font-size: 15px; float: left;}
+.b-code h2                {font-size: 19px; margin-bottom: 10px;}
+.b-code .b-section        {margin: 10px;}
+.b-code .b-section__item  {margin-bottom: 20px; padding-left: 10px;}
+.b-code .b-section__list  {margin-left: 10px;}
+.b-code .b-section__links {margin: 10px 0;}
+
+.b-section__item dl {float: left;}
+.b-section__item dt {padding-right: 10px; float: left; border-right: 3px solid #999;}
+.b-section__item dd {margin-left: 10px; float: left;}
+.b-description      {width: 500px; margin-top: 10px;}
+
+.b-code a:visited,
+.b-code a {color: blue;}
