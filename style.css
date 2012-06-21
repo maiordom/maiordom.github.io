@@ -14,6 +14,7 @@ ul {list-style: none;}
 .b-nav a {float: left; margin-right: 10px;}
 
 .b-cv            {font: 15px Arial, Verdana, Helvetica, sans-serif; float: left;}
+.b-cv li         {line-height: 22px;}
 .b-cv .b-section {margin: 10px;}
 .b-cv .b-inner   {margin: 20px;}
 .b-cv h1         {margin: 10px; font-size: 19px;}
