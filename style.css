@@ -13,17 +13,17 @@ ul { list-style: none; }
 .nav   { float: left; margin: 10px; font-size: 19px; }
 .nav a { float: left; margin-right: 10px; }
 
-.cv            { font: 15px Arial, Verdana, Helvetica, sans-serif; float: left; }
-.cv li         { line-height: 22px; }
+.cv          { font: 15px Arial, Verdana, Helvetica, sans-serif; float: left; }
+.cv li       { line-height: 22px; }
 .cv .section { margin: 10px; }
 .cv .inner   { margin: 20px; }
-.cv h1         { margin: 10px; font-size: 19px; }
-.cv h2         { font-size: 15px; }
-.cv dl         { line-height: 21px; margin: 20px; }
-.cv dd         { white-space: nowrap; }
-.cv dt         { float: left; width: 130px; }
-.cv p          { line-height: 20px; }
-.cv table      { border-collapse: collapse; }
-.cv table td   { padding: 5px;  }
+.cv h1       { margin: 10px; font-size: 19px; }
+.cv h2       { font-size: 15px; }
+.cv dl       { line-height: 21px; margin: 20px; }
+.cv dd       { white-space: nowrap; }
+.cv dt       { float: left; width: 130px; }
+.cv p        { line-height: 20px; }
+.cv table    { border-collapse: collapse; }
+.cv table td { padding: 5px;  }
 
 .skills td { border: 1px solid #000; }
