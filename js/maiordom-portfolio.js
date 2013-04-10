@@ -14,7 +14,7 @@ function init() {
 function setPortfolioSize() {
     var containerWidth, cols, colsWidth, clearedColsWidth;
 
-    containerWidth = body.width(),
+    containerWidth = body.width();
     cols = Math.floor( ( containerWidth + gutterWidth ) / ( columnWidth + gutterWidth ) );
     cols = Math.max( cols, 1 );
     clearedColsWidth = cols * ( columnWidth + gutterWidth );
@@ -31,7 +31,7 @@ function initGrid() {
     portfolio = $( '.port-list' );
 
     portfolio.imagesLoaded( function() {
-        portfolio.masonry( {
+        portfolio.masonry({
             itemSelector: '.port-item',
             isAnimated: true,
             columnWidth: columnWidth, 
