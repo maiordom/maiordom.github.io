@@ -37,6 +37,7 @@ BODY {
 .port-wrapper {
     position: relative;
     min-width: 900px;
+    overflow: hidden;
 }
 
 .pixel {
