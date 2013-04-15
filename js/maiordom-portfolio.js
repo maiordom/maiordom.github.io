@@ -30,16 +30,14 @@ function setPortfolioSize() {
 function initGrid() {
     portfolio = $( '.port-list' );
 
-    portfolio.imagesLoaded( function() {
-        portfolio.masonry({
-            itemSelector: '.port-item',
-            isAnimated: true,
-            columnWidth: columnWidth, 
-            gutterWidth: gutterWidth
-        });
-
-        setPortfolioSize();
+    portfolio.masonry({
+        itemSelector: '.port-item',
+        isAnimated: true,
+        columnWidth: columnWidth, 
+        gutterWidth: gutterWidth
     });
+
+    setPortfolioSize();
 }
 
 })( jQuery, window );
