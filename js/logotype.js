@@ -7,6 +7,26 @@ $(function() {
         rootWidth = root.width(),
         rootHeight = root.height();
 
+    function isIE10() {
+        if ( $.browser.msie && parseInt( $.browser.version ) ) {
+            return true;
+        }
+    }
+
+    function _3dSupport() {
+        var props = [ 'perspectiveProperty', 'WebkitPerspective', 'MozPerspective', 'OPerspective', 'msPerspective' ],
+            el = document.createElement( 'div' ), i = 0;
+
+        while ( props[ i ] ) {
+            if ( typeof el.style[ props[ i ] ] !== "undefined" ) {
+                return true;
+            }
+            i++;
+        }
+
+        return false;
+    }
+
     function getTransformPropNameByPrefix() {
         var props = 'transform WebkitTransform MozTransform OTransform msTransform'.split( ' ' ), prop,
         el = document.createElement( 'div' );
@@ -34,13 +54,14 @@ $(function() {
 
         maxX = rootWidth;
         maxY = rootHeight;
-        tl = new TimelineMax({
-            onComplete: function() {
-                face[ 0 ].style[ transformPropName ] = 'rotateX(' + x + 'deg) rotateY(' + y + 'deg) rotateZ(' + z + 'deg)';     
-            }
-        });
 
-        faceWrapper.appendTo( logotype ).show().find( '.cube-item' ).each( function( i, el ) {
+        faceWrapper.appendTo( logotype ).show();
+
+        if ( !_3dSupport() || isIE10() ) {
+            return;
+        }
+
+        faceWrapper.find( '.cube-item' ).each( function( i, el ) {
             $el = $( this );
 
             TweenMax.to( $el, 0.2, {
@@ -63,6 +84,12 @@ $(function() {
             }));
 
             subTlArr.push( subTl );
+        });
+
+        tl = new TimelineMax({
+            onComplete: function() {
+                face[ 0 ].style[ transformPropName ] = 'rotateX(' + x + 'deg) rotateY(' + y + 'deg) rotateZ(' + z + 'deg)';     
+            }
         });
 
         tl.add( subTlArr );
