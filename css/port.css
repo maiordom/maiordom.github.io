@@ -1,3 +1,7 @@
+/* =========================
+   ------- Portfolio -------
+   ========================= */
+
 BODY, HTML {
     width: 100%;
     height: 100%;
@@ -19,6 +23,44 @@ BODY {
     font-weight: normal;
     font-style: normal;
 }
+
+/* ==========================
+   ------- Scroll Bar -------
+   ========================== */
+
+::-webkit-scrollbar {
+    margin-right: 5px;
+    background-color: #ddd;
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    -webit-box-shadow: 0 0 2px #ccc;
+    box-shadow: 0 0 2px #ccc;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 1px #eee solid;
+    border-radius: 4px;
+    background: #777;
+
+    -webit-box-shadow: 0 0 8px #555 inset;
+    box-shadow: 0 0 8px #555 inset;
+
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: #bbb;
+    box-shadow: 0 0 8px #999 inset;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+/* End | Scroll Bar */
 
 #maiordom {
     display: none;
@@ -183,3 +225,5 @@ BODY {
 .port-pet .port-link:hover .port-to {
     background: #173a32;
 }
+
+/* End | Portfolio */
