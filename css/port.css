@@ -65,11 +65,16 @@ BODY {
 #maiordom {
     display: none;
     position: absolute;
-    top: 10px;
+    top: 55px;
     left: 50%;
     margin-left: -255px;
     width: 510px;
     height: 75px;
+}
+
+.head {
+    position: relative;
+    height: 0;
 }
 
 .port-github {
