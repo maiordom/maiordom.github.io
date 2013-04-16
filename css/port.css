@@ -41,7 +41,7 @@ BODY {
 
 ::-webkit-scrollbar-thumb {
     border: 1px #eee solid;
-    border-radius: 4px;
+    border-radius: 15px;
     background: #777;
 
     -webit-box-shadow: 0 0 8px #555 inset;
