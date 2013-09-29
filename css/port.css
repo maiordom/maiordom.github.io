@@ -163,6 +163,7 @@ BODY {
 }
 
 .port-img {
+    display: block;
     width: 320px;
 
     -webkit-transition: all .2s ease-out;
