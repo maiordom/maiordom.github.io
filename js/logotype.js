@@ -1,47 +1,47 @@
 $(function() {
+    'use strict';
+
     var transformPropName = getTransformPropNameByPrefix(),
-        logotype = $( '#maiordom' ),
+        logotype    = $( '#maiordom' ),
         faceWrapper = $( '.cube-wrapper' ),
-        face = $( '.cube' ),
-        root = $( window ),
-        rootWidth = root.width(),
-        rootHeight = root.height();
+        face        = $( '.cube' ),
+        root        = $( window ),
+        rootWidth   = root.width(),
+        rootHeight  = root.height();
 
     function isIE10() {
-        if ( $.browser.msie && parseInt( $.browser.version ) ) {
+        if ( $.browser.msie && parseInt( $.browser.version ) === 10 ) {
             return true;
         }
     }
 
-    function _3dSupport() {
-        var props = [ 'perspectiveProperty', 'WebkitPerspective', 'MozPerspective', 'OPerspective', 'msPerspective' ],
-            el = document.createElement( 'div' ), i = 0;
+    function has3dSupport() {
+        var props = 'perspectiveProperty WebkitPerspective MozPerspective OPerspective msPerspective'.split( ' ' ),
+            el = document.createElement( 'div' );
 
-        while ( props[ i ] ) {
-            if ( typeof el.style[ props[ i ] ] !== "undefined" ) {
+        for ( var i = 0, ilen = props.length; i < ilen; i++ ) {
+            if ( typeof el.style[ props[ i ] ] !== 'undefined' ) {
                 return true;
             }
-            i++;
         }
 
         return false;
     }
 
     function getTransformPropNameByPrefix() {
-        var props = 'transform WebkitTransform MozTransform OTransform msTransform'.split( ' ' ), prop,
-        el = document.createElement( 'div' );
+        var props = 'transform WebkitTransform MozTransform OTransform msTransform'.split( ' ' ),
+            el = document.createElement( 'div' );
 
         for ( var i = 0, ilen = props.length; i < ilen; i++ ) {
-            if ( typeof el.style[ props[ i ] ] !== "undefined" ) {
+            if ( typeof el.style[ props[ i ] ] !== 'undefined' ) {
                 return props[ i ];
-                break;
             }
         }
     }
 
     function mtRand( min, max ) {
-        var min = parseInt( min, 10 ),
-            max = parseInt( max, 10 );
+        min = parseInt( min, 10 ),
+        max = parseInt( max, 10 );
 
         return Math.floor( Math.random() * ( max - min + 1 ) ) + min;
     }
@@ -57,7 +57,7 @@ $(function() {
 
         faceWrapper.appendTo( logotype ).show();
 
-        if ( !_3dSupport() || isIE10() ) {
+        if ( !has3dSupport() || isIE10() ) {
             return;
         }
 
@@ -102,12 +102,12 @@ $(function() {
         maxX = rootWidth;
         maxY = rootHeight;
 
-        logotype.show().find( '.letter .pixel' ).each( function ( i, el ) {
+        logotype.show().find( '.letter .pixel' ).each( function( i, el ) {
             $el = $( this );
 
             TweenMax.to( $el, 0.2, {
                 css: {
-                    backgroundColor: "#111111"
+                    backgroundColor: '#111111'
                 },
                 repeat: -1,
                 repeatDelay: Math.random() * 40 + 3,
@@ -139,9 +139,8 @@ $(function() {
     }
 
     setTimeout( function() {
-        $( '.head' ).animate( { height: '175px' }, 1000 );
+        $( '.head' ).animate( { height: '135px' }, 1000 );
         setFace();
         setLogotype();
     }, 1500 );
-
 });
