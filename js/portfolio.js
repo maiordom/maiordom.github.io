@@ -4,14 +4,16 @@
         gutterWidth = 15, portfolio, body;
 
     $( document ).ready( init );
-    $( root ).on( 'resize', setPortfolioSize );
 
     function init() {
         body = $( 'body' );
         console.time( 'render list' );
         DB.render( $( '.port-list' ) );
         console.timeEnd( 'render list' );
-        initGrid();
+
+        setTimeout( function() {
+            initGrid();
+        }, 100 );
     }
 
     function setPortfolioSize() {
@@ -31,12 +33,14 @@
     }
 
     function initGrid() {
+        $( root ).on( 'resize', setPortfolioSize );
+
         portfolio = $( '.port-list' );
 
         portfolio.masonry({
             itemSelector: '.port-item',
             isAnimated: true,
-            columnWidth: columnWidth, 
+            columnWidth: columnWidth,
             gutterWidth: gutterWidth
         });
 

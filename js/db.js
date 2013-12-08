@@ -84,16 +84,6 @@
                 src: 'images/dark-hor-menu.jpg'
             }
         }, {
-            type: 'double',
-            title: 'Clock',
-            gitHub: {
-                link: 'https://github.com/maiordom/css-live/tree/master/clock'
-            },
-            demo: {
-                link: 'http://codepen.io/maiordom/full/Cqipw',
-                src: 'images/clock.jpg'
-            }
-        }, {
             type: 'single',
             title: 'Sindel',
             gitHub: {
@@ -105,13 +95,13 @@
             }
         }, {
             type: 'double',
-            title: 'd3Try',
+            title: 'Clock',
             gitHub: {
-                link: 'https://github.com/maiordom/d3try'
+                link: 'https://github.com/maiordom/css-live/tree/master/clock'
             },
             demo: {
-                link: 'http://sati.16mb.com/d3try/step4/',
-                src: 'images/git.d3try.jpg'
+                link: 'http://codepen.io/maiordom/full/Cqipw',
+                src: 'images/clock.jpg'
             }
         }, {
             type: 'single',
@@ -125,13 +115,14 @@
             }
         }, {
             type: 'double',
-            title: 'Zero',
+            title: 'Milena',
             gitHub: {
-                link: 'https://github.com/maiordom/zero'
+                link: 'https://github.com/maiordom/milena'
             },
             demo: {
-                link: 'http://sati.16mb.com/zero/',
-                src: 'images/git.zero.jpg'
+                link: 'http://sati.16mb.com/milena/',
+                src: 'images/git.milena.png',
+                height: 320
             }
         }, {
             type: 'single',
@@ -145,14 +136,33 @@
             }
         }, {
             type: 'double',
-            title: 'Milena',
+            title: 'Zero',
             gitHub: {
-                link: 'https://github.com/maiordom/milena'
+                link: 'https://github.com/maiordom/zero'
             },
             demo: {
-                link: 'http://sati.16mb.com/milena/',
-                src: 'images/git.milena.jpg',
-                height: 438
+                link: 'http://sati.16mb.com/zero/',
+                src: 'images/git.zero.jpg'
+            }
+        }, {
+            type: 'single',
+            title: 'Gmaps Polygon',
+            gitHub: {
+                link: 'https://github.com/maiordom/gmaps-polygon'
+            },
+            demo: {
+                link: 'http://sati.16mb.com/polygon/',
+                src: 'images/git.gmaps-polygon.png'
+            }
+        }, {
+            type: 'double',
+            title: 'd3Try',
+            gitHub: {
+                link: 'https://github.com/maiordom/d3try'
+            },
+            demo: {
+                link: 'http://sati.16mb.com/d3try/step4/',
+                src: 'images/git.d3try.jpg'
             }
         }, {
             type: 'single',
@@ -173,38 +183,6 @@
             demo: {
                 link: 'http://sati.16mb.com/jade/',
                 src: 'images/git.jade.jpg'
-            }
-        }, {
-            type: 'single',
-            title: 'Gmaps Polygon',
-            gitHub: {
-                link: 'https://github.com/maiordom/gmaps-polygon'
-            },
-            demo: {
-                link: 'http://sati.16mb.com/polygon/',
-                src: 'images/git.gmaps-polygon.png'
-            }
-        }, {
-            type: 'double',
-            title: 'Scrolling',
-            gitHub: {
-                link: 'https://github.com/maiordom/scrolling'
-            },
-            demo: {
-                link: 'http://sati.16mb.com/scrolling/',
-                src: 'images/git.scrolling(horizontal).jpeg',
-                height: 243
-            }
-        }, {
-            type: 'single',
-            title: 'Sorter',
-            gitHub: {
-                link: 'https://github.com/maiordom/table-sorter'
-            },
-            demo: {
-                link: 'http://sati.16mb.com/table-sorter/',
-                src: 'images/git.sorter.jpg',
-                height: 174
             }
         }
     ];
