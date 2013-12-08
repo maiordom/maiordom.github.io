@@ -37,14 +37,14 @@
 
         portfolio = $( '.port-list' );
 
+        setPortfolioSize();
+
         portfolio.masonry({
             itemSelector: '.port-item',
             isAnimated: true,
             columnWidth: columnWidth,
             gutterWidth: gutterWidth
         });
-
-        setPortfolioSize();
     }
 
 })( jQuery, window );
