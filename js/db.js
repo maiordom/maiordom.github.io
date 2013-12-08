@@ -146,7 +146,7 @@
             }
         }, {
             type: 'single',
-            title: 'Gmaps Polygon',
+            title: 'Polygon',
             gitHub: {
                 link: 'https://github.com/maiordom/gmaps-polygon'
             },

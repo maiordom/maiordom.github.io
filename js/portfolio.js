@@ -1,6 +1,6 @@
 (function( $, root ) {
 
-    var columnWidth = 360,
+    var columnWidth = 362,
         gutterWidth = 15, portfolio, body;
 
     $( document ).ready( init );
