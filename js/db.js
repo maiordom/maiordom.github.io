@@ -25,6 +25,26 @@
     var DB = [
         {
             type: 'single',
+            title: 'Sindel',
+            gitHub: {
+                link: 'https://github.com/maiordom/sindel'
+            },
+            demo: {
+                link: 'http://sati.16mb.com/sindel/',
+                src: 'images/git.sindel.jpg'
+            }
+        }, {
+            type: 'double',
+            title: 'Yahiko - Content Slider',
+            gitHub: {
+                link: 'https://github.com/maiordom/yahiko'
+            },
+            demo: {
+                link: 'http://sati.16mb.com/yahiko/',
+                src: 'images/git.yahiko.png'
+            }
+        }, {
+            type: 'single',
             title: 'iSlider',
             gitHub: {
                 link: 'https://github.com/maiordom/islider'
@@ -85,13 +105,13 @@
             }
         }, {
             type: 'single',
-            title: 'Sindel',
+            title: 'Table Sorter',
             gitHub: {
-                link: 'https://github.com/maiordom/sindel'
+                link: 'https://github.com/maiordom/tablse-sorter'
             },
             demo: {
-                link: 'http://sati.16mb.com/sindel/',
-                src: 'images/git.sindel.jpg'
+                link: 'http://sati.16mb.com/table-sorter/',
+                src: 'images/git.table-sorter.png'
             }
         }, {
             type: 'double',

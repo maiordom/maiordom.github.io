@@ -96,16 +96,16 @@ $(function() {
         tl.play();
     }
 
-    function setLogotype() {
-        var maxX, maxY, subTl, $el;
+    function setLogotype( $chars ) {
+        var maxX, maxY, subTl, $pixel;
 
         maxX = rootWidth;
         maxY = rootHeight;
 
-        logotype.show().find( '.letter .pixel' ).each( function( i, el ) {
-            $el = $( this );
+        $chars.find( '.pixel' ).each( function( i, el ) {
+            $pixel = $( this );
 
-            TweenMax.to( $el, 0.2, {
+            TweenMax.to( $pixel, 0.2, {
                 css: {
                     backgroundColor: '#111111'
                 },
@@ -118,7 +118,7 @@ $(function() {
                 delay: i * 0.1
             });
 
-            subTl.add( TweenMax.from( $el, 1, {
+            subTl.add( TweenMax.from( $pixel, 1, {
                 css: {
                     alpha: 0,
                     x: Math.random() * maxX - ( maxX / 2 ),
@@ -127,7 +127,7 @@ $(function() {
                 ease: Power3.easeInOut
             }));
 
-            subTl.add( TweenMax.from( $el, 0.8, {
+            subTl.add( TweenMax.from( $pixel, 0.8, {
                 css: {
                     scale: Math.random() * 3,
                     rotation: Math.random() * 360 - 180
@@ -140,7 +140,18 @@ $(function() {
 
     setTimeout( function() {
         $( '.head' ).animate( { height: '135px' }, 1000 );
+        var $letter = logotype.show().find( '.letter' ),
+            $lastChars = $letter.slice( 5 ),
+            $buff = $();
+
+        $buff[ 0 ] = $lastChars[ 2 ];
+        $buff[ 1 ] = $lastChars[ 1 ];
+        $buff[ 2 ] = $lastChars[ 0 ];
+        $buff.length = 3;
+        $lastChars = $buff;
+
         setFace();
-        setLogotype();
+        setLogotype( $letter.slice( 0, 5 ) );
+        setLogotype( $lastChars );
     }, 1500 );
 });

@@ -191,13 +191,13 @@ BODY {
     display: block;
     position: absolute;
     width: 100%;
-    height: 20px;
     bottom: -35px;
     text-align: center;
     font-size: 15px;
     text-indent: 10px;
     background: #111;
     color: #FFF;
+    font-family: Helvetica, sans-serif;
 
     line-height: 35px;
     height: 35px;
