@@ -31,7 +31,7 @@
             },
             demo: {
                 link: 'http://sati.16mb.com/sindel/',
-                src: 'images/git.sindel.jpg'
+                src: 'images/git.sindel.png'
             }
         }, {
             type: 'double',
