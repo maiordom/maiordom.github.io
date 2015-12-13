@@ -16,6 +16,7 @@
         width: 320,
         height: 320
     };
+    
     var Double = {
         className: 'port_pet port_col2',
         width: 695,
