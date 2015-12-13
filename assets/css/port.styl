@@ -1,0 +1,176 @@
+/* =========================
+   ------- Portfolio -------
+   ========================= */
+
+BODY, HTML
+    width 100%
+    height 100%
+
+BODY
+    background #eee
+    font-family 'Crimson Text', Times, 'Times New Roman', serif
+    color #222
+
+@font-face
+    font-family 'LeagueGothicRegular'
+    src url('/assets/css/font/League_Gothic-webfont.eot')
+    src url('/assets/css/font/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/css/font/League_Gothic-webfont.woff') format('woff'),
+         url('/assets/css/font/League_Gothic-webfont.ttf') format('truetype'),
+         url('/assets/css/font/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg')
+    font-weight normal
+    font-style normal
+
+/* ==========================
+   ------- Scroll Bar -------
+   ========================== */
+
+::-webkit-scrollbar
+    margin-right 5px
+    background-color #ddd
+    width 15px
+
+::-webkit-scrollbar-track
+    box-shadow 0 0 2px #ccc
+
+::-webkit-scrollbar-thumb
+    border 1px #eee solid
+    border-radius 15px
+    background #777
+    box-shadow 0 0 8px #555 inset
+    transition all .3s ease-out
+
+::-webkit-scrollbar-thumb:window-inactive
+    background #bbb
+    box-shadow 0 0 8px #999 inset
+
+::-webkit-scrollbar-thumb:hover
+    background #999
+
+/* End | Scroll Bar */
+
+#maiordom
+    display none
+    position absolute
+    top 55px
+    left 50%
+    margin-left -255px
+    width 510px
+    height 75px
+
+.head
+    position relative
+    height 0
+
+.pixel
+    position absolute
+    width 15px
+    height 15px
+    background #555
+
+.letter
+    position absolute
+
+.port
+    &__github
+        vertical-align middle
+
+    &__wrapper
+        position relative
+        min-width 900px
+        overflow hidden
+
+    &__list
+        position relative
+        margin-top 40px
+
+    &__title
+        font-family 'LeagueGothicRegular', Arial, Helvetica, sans-serif
+        text-transform uppercase
+        font-size 36px
+        color #222
+        margin-bottom 10px
+        display inline-block   
+        font-weight normal     
+
+    &__item
+        display block
+        float left
+        margin 10px 5px
+        padding 15px
+        width 330px
+        background white
+        border-radius 4px
+        border 1px #DDD solid
+
+    &_col2
+        width 705px
+
+    &_col2 &__img
+        width 695px
+
+    &__item:before, &__item:after
+        content ""
+        position absolute
+        bottom 18px
+        width 80%
+        height 20%
+        max-width 300px
+        z-index -2
+        box-shadow 0 15px 10px rgba(0, 0, 0, 0.7)
+
+    &__item:before
+        left 10px
+        transform rotate(-2deg)   
+
+    &__item:after
+        right 10px
+        transform rotate(2deg)   
+
+    &__img
+        display block
+        width 320px
+        transition all .2s ease-out
+
+    &__link
+        overflow hidden
+        position relative
+        border 5px #DDD solid
+        margin 5px 0
+        display inline-block
+        text-decoration none
+        transition all .2s ease-out
+
+    &__to
+        display block
+        position absolute
+        width 100%
+        bottom -35px
+        text-align center
+        font-size 15px
+        text-indent 10px
+        background #111
+        color #FFF
+        font-family Helvetica, sans-serif
+        line-height 35px
+        height 35px
+        box-shadow 0 -2px 6px rgba(0, 0, 0, 0.1) inset
+        transition bottom, background .3s, .3s cubic-bezier(0.26, 0.86, 0.44, 0.985)
+
+    &__link:hover
+        border-color #9DB281
+
+    &__link:hover &__img
+        margin-top -10px
+        margin-bottom 10px
+
+    &__link:hover &__to
+        bottom 0
+
+    &_pet &__link:hover
+        border-color #47bfa2
+
+    &_pet &__link:hover &__to
+        background #173a32
+
+/* End | Portfolio */
