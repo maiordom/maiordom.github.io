@@ -5,9 +5,9 @@
   },
   "config": {
     "name": "maiordom.github.io",
-    "jsPath": "./assets/js/*.js",
-    "cssPath": "./assets/css/*.styl",
-    "dist": "./dist"
+    "jsPath": "assets/js",
+    "cssPath": "assets/css",
+    "dist": "dist"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.0.15",
@@ -37,8 +37,7 @@
   "license": "MIT",
   "name": "maiordom.github.io",
   "pre-commit": [
-    "lint",
-    "test"
+    "lint"
   ],
   "repository": {
     "type": "git",
@@ -46,9 +45,6 @@
   },
   "scripts": {
     "lint": "node pre-commit.js",
-    "selenium_install": "node_modules/.bin/selenium-standalone install",
-    "selenium_start": "node_modules/.bin/selenium-standalone start",
-    "test": "node_modules/.bin/mocha --timeout 60000 --slow 30000 test/webdriver.js",
     "validate": "npm ls"
   },
   "version": "0.1.0"

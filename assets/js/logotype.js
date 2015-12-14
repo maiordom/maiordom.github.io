@@ -1,4 +1,5 @@
-(function($, window, undefined) {
+/* global TweenMax:true TimelineMax:true Power3:true TimelineLite:true */
+(function($, window, undefined) { //eslint-disable-line
     'use strict';
 
     var transformPropName = getTransformPropNameByPrefix();
@@ -9,7 +10,7 @@
     var rootHeight = $(window).height();
 
     function isIE10() {
-        if ($.browser.msie && parseInt($.browser.version) === 10) {
+        if ($.browser.msie && parseInt($.browser.version, 10) === 10) {
             return true;
         }
     }
@@ -50,13 +51,6 @@
                 return props[i];
             }
         }
-    }
-
-    function mtRand(min, max) {
-        min = parseInt(min, 10);
-        max = parseInt(max, 10);
-
-        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
     function setFace() {
@@ -163,4 +157,4 @@
         setLogotype($lastChars);
     }, 1500);
 
-})(jQuery, window, undefined);
+})(jQuery, window, undefined); //eslint-disable-line

@@ -1,4 +1,5 @@
-(function($, window, undefined) {
+/* global DB:true */
+(function($, window, undefined) { //eslint-disable-line
     'use strict';
 
     var columnWidth = 362;
@@ -48,4 +49,4 @@
         });
     }
 
-})(jQuery, window, undefined);
+})(jQuery, window, undefined); // eslint-disable-line

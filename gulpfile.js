@@ -23,7 +23,7 @@ gulp.task('server', () => {
 });
 
 gulp.task('babel', () => {
-    return gulp.src(config.jsPath)
+    return gulp.src(config.jsPath + '/*.js')
         .pipe(babel({
             presets: ['es2015']
         }))
@@ -32,7 +32,7 @@ gulp.task('babel', () => {
 });
 
 gulp.task('stylus', () => {
-    return gulp.src(config.cssPath)
+    return gulp.src(config.cssPath + '/*.styl')
         .pipe(stylus({
             use: [nib()]
         }))
@@ -63,11 +63,11 @@ gulp.task('build', () => {
 });
 
 gulp.task('watch', () => {
-    watch(config.jsPath, () => {
+    watch(config.jsPath + '/*.js', () => {
         runSequence('babel');
     });
 
-    watch(config.cssPath, () => {
+    watch(config.cssPath + '/*.styl', () => {
         runSequence('stylus');
     });
 });

@@ -1,4 +1,4 @@
-(function($, window, undefined) {
+(function($, window, undefined) { //eslint-disable-line
     'use strict';
 
     var DBItem;
@@ -16,7 +16,7 @@
         width: 320,
         height: 320
     };
-    
+
     var Double = {
         className: 'port_pet port_col2',
         width: 695,
@@ -218,19 +218,19 @@
     }
 
     DB.tmpl = '' +
-        '<div class="port__item ${className}">\
-            <div class="port__top">\
-                <h2 class="port__title">${title}</h2>\
-                <a class="port__github" target="_blank" href="${gitHub.link}">\
-                    <img src="${gitHub.src}" width="${gitHub.width}" height="${gitHub.height}" alt="">\
-                </a>\
-            </div>\
-            <a class="port__link" href="${demo.link}" target="_blank">\
-                <img class="port__img" src="${demo.src}" width="${demo.width}" height="${demo.height}" alt="">\
-                <p class="port__to">Visit demo</p>\
-            </a>\
-        </div>\
-    ';
+        '<div class="port__item ${className}">' +
+            '<div class="port__top">' +
+                '<h2 class="port__title">${title}</h2>' +
+                '<a class="port__github" target="_blank" href="${gitHub.link}">' +
+                    '<img src="${gitHub.src}" width="${gitHub.width}" height="${gitHub.height}" alt="">' +
+                '</a>' +
+            '</div>' +
+            '<a class="port__link" href="${demo.link}" target="_blank">' +
+                '<img class="port__img" src="${demo.src}" width="${demo.width}" height="${demo.height}" alt="">' +
+               '<p class="port__to">Visit demo</p>' +
+            '</a>' +
+        '</div>'
+    ;
 
     DB.read = function(obj, parent, propName, callback) {
         parent = parent ? parent + '.' : '';
@@ -272,4 +272,4 @@
 
     window.DB = DB;
 
-})(jQuery, window, undefined);
+})(jQuery, window, undefined); //eslint-disable-line
