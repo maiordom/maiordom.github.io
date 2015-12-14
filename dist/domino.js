@@ -3,6 +3,7 @@
 function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
 
 (function ($, window, undefined) {
+    //eslint-disable-line
     'use strict';
 
     var DBItem;
@@ -221,19 +222,7 @@ function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.const
         DBItem.gitHub.height = GitHub.height;
     }
 
-    DB.tmpl = '' + '<div class="port__item ${className}">\
-            <div class="port__top">\
-                <h2 class="port__title">${title}</h2>\
-                <a class="port__github" target="_blank" href="${gitHub.link}">\
-                    <img src="${gitHub.src}" width="${gitHub.width}" height="${gitHub.height}" alt="">\
-                </a>\
-            </div>\
-            <a class="port__link" href="${demo.link}" target="_blank">\
-                <img class="port__img" src="${demo.src}" width="${demo.width}" height="${demo.height}" alt="">\
-                <p class="port__to">Visit demo</p>\
-            </a>\
-        </div>\
-    ';
+    DB.tmpl = '' + '<div class="port__item ${className}">' + '<div class="port__top">' + '<h2 class="port__title">${title}</h2>' + '<a class="port__github" target="_blank" href="${gitHub.link}">' + '<img src="${gitHub.src}" width="${gitHub.width}" height="${gitHub.height}" alt="">' + '</a>' + '</div>' + '<a class="port__link" href="${demo.link}" target="_blank">' + '<img class="port__img" src="${demo.src}" width="${demo.width}" height="${demo.height}" alt="">' + '<p class="port__to">Visit demo</p>' + '</a>' + '</div>';
 
     DB.read = function (obj, parent, propName, callback) {
         parent = parent ? parent + '.' : '';
@@ -274,10 +263,11 @@ function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.const
     };
 
     window.DB = DB;
-})(jQuery, window, undefined);
-'use strict';
+})(jQuery, window, undefined); //eslint-disable-line
 
+/* global TweenMax:true TimelineMax:true Power3:true TimelineLite:true */
 (function ($, window, undefined) {
+    //eslint-disable-line
     'use strict';
 
     var transformPropName = getTransformPropNameByPrefix();
@@ -288,7 +278,7 @@ function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.const
     var rootHeight = $(window).height();
 
     function isIE10() {
-        if ($.browser.msie && parseInt($.browser.version) === 10) {
+        if ($.browser.msie && parseInt($.browser.version, 10) === 10) {
             return true;
         }
     }
@@ -317,13 +307,6 @@ function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.const
                 return props[i];
             }
         }
-    }
-
-    function mtRand(min, max) {
-        min = parseInt(min, 10);
-        max = parseInt(max, 10);
-
-        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
     function setFace() {
@@ -429,10 +412,11 @@ function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.const
         setLogotype($letter.slice(0, 5));
         setLogotype($lastChars);
     }, 1500);
-})(jQuery, window, undefined);
-'use strict';
+})(jQuery, window, undefined); //eslint-disable-line
 
+/* global DB:true */
 (function ($, window, undefined) {
+    //eslint-disable-line
     'use strict';
 
     var columnWidth = 362;
@@ -481,4 +465,4 @@ function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.const
             gutterWidth: gutterWidth
         });
     }
-})(jQuery, window, undefined);
+})(jQuery, window, undefined); // eslint-disable-line

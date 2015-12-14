@@ -23,23 +23,23 @@ gulp.task('server', () => {
 });
 
 gulp.task('babel', () => {
-    return gulp.src(config.jsPath + '/*.js')
+    return gulp.src(`${config.jsPath}/*.js`)
+        .pipe(concat(`${config.name}.js`))
         .pipe(babel({
             presets: ['es2015']
         }))
-        .pipe(concat('domino.js'))
         .pipe(gulp.dest(config.dist));
 });
 
 gulp.task('stylus', () => {
-    return gulp.src(config.cssPath + '/*.styl')
+    return gulp.src(`${config.cssPath}/*.styl`)
         .pipe(stylus({
             use: [nib()]
         }))
         .pipe(autoprefixer({
             browsers: ['last 2 versions']
         }))
-        .pipe(concat('domino.css'))
+        .pipe(concat(`${config.name}.css`))
         .pipe(gulp.dest(config.dist))
         .pipe(connect.reload());
 });
@@ -63,11 +63,11 @@ gulp.task('build', () => {
 });
 
 gulp.task('watch', () => {
-    watch(config.jsPath + '/*.js', () => {
+    watch(`${config.jsPath}/*.js`, () => {
         runSequence('babel');
     });
 
-    watch(config.cssPath + '/*.styl', () => {
+    watch(`${config.cssPath}/*.styl`, () => {
         runSequence('stylus');
     });
 });
