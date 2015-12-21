@@ -222,7 +222,7 @@ function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.const
         DBItem.gitHub.height = GitHub.height;
     }
 
-    DB.tmpl = '' + '<div class="port__item ${className}">' + '<div class="port__top">' + '<h2 class="port__title">${title}</h2>' + '<a class="port__github" target="_blank" href="${gitHub.link}">' + '<img src="${gitHub.src}" width="${gitHub.width}" height="${gitHub.height}" alt="">' + '</a>' + '</div>' + '<a class="port__link" href="${demo.link}" target="_blank">' + '<img class="port__img" src="${demo.src}" width="${demo.width}" height="${demo.height}" alt="">' + '<p class="port__to">Visit demo</p>' + '</a>' + '</div>';
+    DB.tmpl = '' + '<div class="port__item ${className}">' + '<a class="port__github-link" target="_blank" href="${gitHub.link}">' + '<h2 class="port__title">${title}</h2>' + '<span class="port__github">' + '<img src="${gitHub.src}" width="${gitHub.width}" height="${gitHub.height}" alt="">' + '</span>' + '</a>' + '<a class="port__link" href="${demo.link}" target="_blank">' + '<img class="port__img" src="${demo.src}" width="${demo.width}" height="${demo.height}" alt="">' + '<p class="port__to">Visit demo</p>' + '</a>' + '</div>';
 
     DB.read = function (obj, parent, propName, callback) {
         parent = parent ? parent + '.' : '';
