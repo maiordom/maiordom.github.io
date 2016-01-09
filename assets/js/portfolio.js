@@ -1,52 +1,47 @@
-/* global DB:true */
 (function($, window, undefined) { //eslint-disable-line
     'use strict';
 
-    var columnWidth = 362;
-    var gutterWidth = 15;
-    var portfolio;
-    var body;
+    const columnWidth = 362;
+    const gutterWidth = 15;
 
-    $(document).ready(init);
+    class Portfolio {
+        constructor() {
+            this.body = $('body');
+            this.portfolio = $('.port__list').addClass('port__list_visible');
 
-    function init() {
-        body = $('body');
-        console.time('render list');
-        DB.render($('.port__list'));
-        console.timeEnd('render list');
+            this.bindEvents();
+            this.setPortfolioSize();
+            this.setMasonry();
+        }
 
-        setTimeout(function() {
-            initGrid();
-        }, 100);
+        bindEvents() {
+            $(window).on('resize', this.setPortfolioSize.bind(this));            
+        }
+
+        setMasonry() {
+            this.portfolio.masonry({
+                itemSelector: '.port__item',
+                isAnimated: true,
+                columnWidth: columnWidth,
+                gutterWidth: gutterWidth
+            });
+        }
+
+        setPortfolioSize() {
+            let containerWidth = this.body.width();
+            let cols = Math.floor((containerWidth + gutterWidth) / (columnWidth + gutterWidth));
+            cols = Math.max(cols, 1);
+            let clearedColsWidth = cols * (columnWidth + gutterWidth);
+            let colsWidth = clearedColsWidth + gutterWidth * (cols - 2);
+
+            this.portfolio.css({
+                width: colsWidth + 'px',
+                left: '50%',
+                'marginLeft': -(clearedColsWidth / 2) + 'px'
+            });
+        }
     }
 
-    function setPortfolioSize() {
-        var containerWidth = body.width();
-        var cols = Math.floor((containerWidth + gutterWidth) / (columnWidth + gutterWidth));
-        cols = Math.max(cols, 1);
-        var clearedColsWidth = cols * (columnWidth + gutterWidth);
-        var colsWidth = clearedColsWidth + gutterWidth * (cols - 2);
-
-        portfolio.css({
-            width: colsWidth + 'px',
-            left: '50%',
-            'marginLeft': -(clearedColsWidth / 2) + 'px'
-        });
-    }
-
-    function initGrid() {
-        $(window).on('resize', setPortfolioSize);
-
-        portfolio = $('.port__list');
-
-        setPortfolioSize();
-
-        portfolio.masonry({
-            itemSelector: '.port__item',
-            isAnimated: true,
-            columnWidth: columnWidth,
-            gutterWidth: gutterWidth
-        });
-    }
+    new Portfolio();
 
 })(jQuery, window, undefined); // eslint-disable-line

@@ -2,159 +2,162 @@
 (function($, window, undefined) { //eslint-disable-line
     'use strict';
 
-    var transformPropName = getTransformPropNameByPrefix();
-    var logotype = $('#maiordom');
-    var faceWrapper = $('.cube-wrapper');
-    var face = $('.cube');
-    var rootWidth = $(window).width();
-    var rootHeight = $(window).height();
+    const logotype = $('.maiordom');
+    const faceWrapper = $('.cube-wrapper');
+    const face = $('.cube');
+    const rootWidth = $(window).width();
+    const rootHeight = $(window).height();
 
-    function isIE10() {
-        if ($.browser.msie && parseInt($.browser.version, 10) === 10) {
-            return true;
-        }
-    }
-
-    function has3dSupport() {
-        var el = document.createElement('div');
-
-        var props = [
-            'perspectiveProperty',
-            'WebkitPerspective',
-            'MozPerspective',
-            'OPerspective',
-            'msPerspective'
-        ];
-
-        for (var i = 0; i < props.length; i++) {
-            if (typeof el.style[props[i]] !== 'undefined') {
+    const Utils = {
+        isIE10() {
+            if ($.browser.msie && parseInt($.browser.version, 10) === 10) {
                 return true;
             }
-        }
+        },
 
-        return false;
-    }
+        has3dSupport() {
+            let el = document.createElement('div');
 
-    function getTransformPropNameByPrefix() {
-        var el = document.createElement('div');
+            let props = [
+                'perspectiveProperty',
+                'WebkitPerspective',
+                'MozPerspective',
+                'OPerspective',
+                'msPerspective'
+            ];
 
-        var props = [
-            'transform',
-            'WebkitTransform',
-            'MozTransform',
-            'OTransform',
-            'msTransform'
-        ];
+            for (let i = 0; i < props.length; i++) {
+                if (typeof el.style[props[i]] !== 'undefined') {
+                    return true;
+                }
+            }
 
-        for (var i = 0, ilen = props.length; i < ilen; i++) {
-            if (typeof el.style[props[i]] !== 'undefined') {
-                return props[i];
+            return false;
+        },
+
+        getTransformPropNameByPrefix() {
+            let el = document.createElement('div');
+
+            let props = [
+                'transform',
+                'WebkitTransform',
+                'MozTransform',
+                'OTransform',
+                'msTransform'
+            ];
+
+            for (let i = 0, ilen = props.length; i < ilen; i++) {
+                if (typeof el.style[props[i]] !== 'undefined') {
+                    return props[i];
+                }
             }
         }
-    }
+    };
 
-    function setFace() {
-        var itemsTimeline = [];
-        var x = 0;
-        var y = 100;
-        var z = 0;
+    const transformPropName = Utils.getTransformPropNameByPrefix();
 
-        faceWrapper.appendTo(logotype).show();
-
-        if (!has3dSupport() || isIE10()) {
-            return;
+    class Logotype {
+        constructor() {
+            setTimeout(function() {
+                this.init();
+            }.bind(this), 250);
         }
 
-        faceWrapper.find('.cube-item').each(function(i, el) {
-            var $el = $(this);
+        init() {
+            let $letter = logotype.show().find('.letter');
+            let $lastChars = $letter.slice(5);
+            let $buff = $();
 
-            TweenMax.to($el, 0.2, {
-                repeat: -1,
-                repeatDelay: Math.random() * 40 + 3,
-                yoyo: true
-            });
+            $buff[0] = $lastChars[2];
+            $buff[1] = $lastChars[1];
+            $buff[2] = $lastChars[0];
+            $buff.length = 3;
+            $lastChars = $buff;
 
-            var timeline = new TimelineMax({
-                delay: i * 0.1 + 0.5
-            });
+            this.setFace();
+            this.setLogotype($letter.slice(0, 5));
+            this.setLogotype($lastChars);
+        }
 
-            timeline.add(TweenMax.from($el, 1, {
-                css: {
-                    alpha: 0,
-                    left: Math.random() * rootWidth - (rootWidth / 2),
-                    top: Math.random() * rootHeight - (rootHeight / 2)
-                },
-                ease: Power3.easeInOut
-            }));
+        setFace() {
+            let itemsTimeline = [];
 
-            itemsTimeline.push(timeline);
-        });
+            faceWrapper.appendTo(logotype).show();
 
-        var timelineMax = new TimelineMax({
-            onComplete: function() {
-                face[0].style[transformPropName] = 'rotateX(' + x + 'deg) rotateY(' + y + 'deg) rotateZ(' + z + 'deg)';
+            if (!Utils.has3dSupport() || Utils.isIE10()) {
+                return;
             }
-        });
 
-        timelineMax.add(itemsTimeline);
-        timelineMax.play();
-    }
+            faceWrapper.find('.cube__item').each(function(i, el) {
+                let $el = $(this);
 
-    function setLogotype($chars) {
-        $chars.find('.pixel').each(function(i, el) {
-            var $pixel = $(this);
+                TweenMax.to($el, 0.2, {
+                    repeat: -1,
+                    repeatDelay: Math.random() * 40 + 3,
+                    yoyo: true
+                });
 
-            TweenMax.to($pixel, 0.2, {
-                css: {
-                    backgroundColor: '#111111'
-                },
-                repeat: -1,
-                repeatDelay: Math.random() * 40 + 3,
-                yoyo: true
+                let timeline = new TimelineMax({
+                    delay: i * 0.1 + 0.5
+                });
+
+                timeline.add(TweenMax.from($el, 1, {
+                    css: {
+                        alpha: 0,
+                        left: Math.random() * rootWidth - (rootWidth / 2),
+                        top: Math.random() * rootHeight - (rootHeight / 2)
+                    },
+                    ease: Power3.easeInOut
+                }));
+
+                itemsTimeline.push(timeline);
             });
 
-            var timeline = new TimelineLite({
-                delay: i * 0.1
+            let timelineMax = new TimelineMax({
+                onComplete: function() {
+                    face.addClass('cube_rotate');
+                }
             });
 
-            timeline.add(TweenMax.from($pixel, 1, {
-                css: {
+            timelineMax.add(itemsTimeline);
+            timelineMax.play();
+        }
+
+        setLogotype($chars) {
+            $chars.find('.pixel').each(function(i, el) {
+                let pixel = this;
+
+                TweenMax.to(pixel, 0.2, {
+                    css: {
+                        backgroundColor: '#111111'
+                    },
+                    repeat: -1,
+                    repeatDelay: Math.random() * 40 + 3,
+                    yoyo: true
+                });
+
+                let timeline = new TimelineMax({
+                    delay: i * 0.1
+                });
+
+                timeline.add(TweenMax.from(pixel, 1, {
                     alpha: 0,
                     x: Math.random() * rootWidth - (rootWidth / 2),
-                    y: Math.random() * rootHeight - (rootHeight / 2)
-                },
-                ease: Power3.easeInOut
-            }));
+                    y: Math.random() * rootHeight - (rootHeight / 2),
+                    transformOrigin: 'left top',
+                    ease: Power3.easeInOut
+                }));
 
-            timeline.add(TweenMax.from($pixel, 0.8, {
-                css: {
+                timeline.add(TweenMax.from(pixel, 0.8, {
                     scale: Math.random() * 3,
                     rotation: Math.random() * 360 - 180
-                }
-            }), 0.8);
+                }), 0.8);
 
-            timeline.play();
-        });
+                timeline.play();
+            });
+        }
     }
 
-    setTimeout(function() {
-        $('.head').animate({
-            height: '135px'
-        }, 1000);
-
-        var $letter = logotype.show().find('.letter');
-        var $lastChars = $letter.slice(5);
-        var $buff = $();
-
-        $buff[0] = $lastChars[2];
-        $buff[1] = $lastChars[1];
-        $buff[2] = $lastChars[0];
-        $buff.length = 3;
-        $lastChars = $buff;
-
-        setFace();
-        setLogotype($letter.slice(0, 5));
-        setLogotype($lastChars);
-    }, 1500);
+    new Logotype();
 
 })(jQuery, window, undefined); //eslint-disable-line

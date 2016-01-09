@@ -16,7 +16,7 @@ if (!result.output) {
 let files = _.compact(result.output.split('\n'));
 
 files = files.filter(function(file) {
-	return new RegExp(jsPath + '\/.*\\.js$').test(file);
+	return new RegExp(jsPath + '\/[^/]*\\.js$').test(file);
 });
 
 if (!files.length) {
@@ -26,7 +26,7 @@ if (!files.length) {
 files.forEach(function(file) {
     var result = shell.exec('eslint ' + __dirname + '/' + file);
 
-    if (result.code) {
-        shell.exit(1);
+    if (result.code === 0) {
+        shell.exit(0);
     }
 });

@@ -14,6 +14,7 @@ const runSequence = require('run-sequence');
 const concat = require('gulp-concat');
 
 const config = require('./package.json').config;
+const generateIndexView = require('./tools/index.js').generateIndexView;
 
 gulp.task('server', () => {
     return connect.server({
@@ -28,6 +29,10 @@ gulp.task('babel', () => {
         .pipe(babel({
             presets: ['es2015']
         }))
+        .on('error', function(err) {
+            console.log('error', err.toString());
+            this.emit('end');
+        })
         .pipe(gulp.dest(config.dist));
 });
 
@@ -62,6 +67,10 @@ gulp.task('build', () => {
     return runSequence('min-js', 'min-css');
 });
 
+gulp.task('view', () => {
+    generateIndexView();
+});
+
 gulp.task('watch', () => {
     watch(`${config.jsPath}/*.js`, () => {
         runSequence('babel');
@@ -70,6 +79,10 @@ gulp.task('watch', () => {
     watch(`${config.cssPath}/*.styl`, () => {
         runSequence('stylus');
     });
+
+    watch(`${config.viewPath}/*.hbs`, () => {
+        runSequence('view');
+    });
 });
 
-gulp.task('default', ['server', 'watch', 'babel', 'stylus']);
+gulp.task('default', ['server', 'watch', 'babel', 'stylus', 'view']);

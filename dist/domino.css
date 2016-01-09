@@ -1,58 +1,3 @@
-.cube {
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  transition: -webkit-transform 3s;
-  transition: transform 3s;
-  transition: transform 3s, -webkit-transform 3s;
-  -webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
-  transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
-  position: relative;
-  width: 75px;
-  height: 75px;
-}
-.cube-wrapper {
-  position: absolute;
-  left: -120px;
-  display: none;
-  -webkit-perspective: 800px;
-  -ms-perspective: 800px;
-  perspective: 800px;
-  -webkit-perspective-origin: -100px -200px;
-  -ms-perspective-origin: -100px -200px;
-  perspective-origin: -100px -200px;
-}
-.cube-item {
-  width: 75px;
-  height: 75px;
-  position: absolute;
-}
-.cube-front {
-  -webkit-transform: rotate3d(0, 0, 0, 0deg) translate3d(0px, 0px, 37.5px);
-  transform: rotate3d(0, 0, 0, 0deg) translate3d(0px, 0px, 37.5px);
-}
-.cube-right {
-  -webkit-transform: rotate3d(0, 1, 0, 90deg) translate3d(0px, 0px, 37.5px);
-  transform: rotate3d(0, 1, 0, 90deg) translate3d(0px, 0px, 37.5px);
-}
-.cube-left {
-  -webkit-transform: rotate3d(0, 1, 0, 270deg) translate3d(0px, 0px, 37.5px);
-  transform: rotate3d(0, 1, 0, 270deg) translate3d(0px, 0px, 37.5px);
-}
-.cube-top {
-  height: 75px;
-  -webkit-transform: rotate3d(1, 0, 0, 90deg) translate3d(0px, 0px, 37.5px);
-  transform: rotate3d(1, 0, 0, 90deg) translate3d(0px, 0px, 37.5px);
-}
-.cube-bottom {
-  height: 75px;
-  -webkit-transform: rotate3d(1, 0, 0, 270deg) translate3d(0px, 0px, 37.5px);
-  transform: rotate3d(1, 0, 0, 270deg) translate3d(0px, 0px, 37.5px);
-}
-.cube-back {
-  -webkit-transform: rotate3d(0, 1, 0, 180deg) translate3d(0px, 0px, 37.5px);
-  transform: rotate3d(0, 1, 0, 180deg) translate3d(0px, 0px, 37.5px);
-}
-
 /* =========================
    ------- Portfolio -------
    ========================= */
@@ -73,33 +18,7 @@ BODY {
   font-weight: normal;
   font-style: normal;
 }
-/* ==========================
-   ------- Scroll Bar -------
-   ========================== */
-::-webkit-scrollbar {
-  margin-right: 5px;
-  background-color: #ddd;
-  width: 15px;
-}
-::-webkit-scrollbar-track {
-  box-shadow: 0 0 2px #ccc;
-}
-::-webkit-scrollbar-thumb {
-  border: 1px #eee solid;
-  border-radius: 15px;
-  background: #777;
-  box-shadow: 0 0 8px #555 inset;
-  transition: all 0.3s ease-out;
-}
-::-webkit-scrollbar-thumb:window-inactive {
-  background: #bbb;
-  box-shadow: 0 0 8px #999 inset;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #999;
-}
-/* End | Scroll Bar */
-#maiordom {
+.maiordom {
   display: none;
   position: absolute;
   top: 55px;
@@ -110,17 +29,86 @@ BODY {
 }
 .head {
   position: relative;
-  height: 0;
+  height: 185px;
+  overflow: hidden;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  transition: 1s height;
 }
 .pixel {
   position: absolute;
   width: 15px;
   height: 15px;
   background: #555;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
 }
 .letter {
   position: absolute;
 }
+
+.cube-wrapper {
+  position: absolute;
+  left: -160px;
+  top: -12px;
+  display: none;
+  -webkit-perspective: 800px;
+  -ms-perspective: 800px;
+  perspective: 800px;
+  -webkit-perspective-origin: -100px -200px;
+  -ms-perspective-origin: -100px -200px;
+  perspective-origin: -100px -200px;
+}
+.cube {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: -webkit-transform 3s;
+  transition: transform 3s;
+  transition: transform 3s, -webkit-transform 3s;
+  -webkit-transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+  transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+.cube_rotate {
+  -webkit-transform: rotateX(0deg) rotateY(190deg) rotateZ(0deg);
+  transform: rotateX(0deg) rotateY(190deg) rotateZ(0deg);
+}
+.cube__item {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+.cube__item_front {
+  -webkit-transform: rotate3d(0, 0, 0, 0deg) translate3d(0px, 0px, 50px);
+  transform: rotate3d(0, 0, 0, 0deg) translate3d(0px, 0px, 50px);
+}
+.cube__item_right {
+  -webkit-transform: rotate3d(0, 1, 0, 90deg) translate3d(0px, 0px, 50px);
+  transform: rotate3d(0, 1, 0, 90deg) translate3d(0px, 0px, 50px);
+}
+.cube__item_left {
+  -webkit-transform: rotate3d(0, 1, 0, 270deg) translate3d(0px, 0px, 50px);
+  transform: rotate3d(0, 1, 0, 270deg) translate3d(0px, 0px, 50px);
+}
+.cube__item_top {
+  height: 100px;
+  -webkit-transform: rotate3d(1, 0, 0, 90deg) translate3d(0px, 0px, 50px);
+  transform: rotate3d(1, 0, 0, 90deg) translate3d(0px, 0px, 50px);
+}
+.cube__item_bottom {
+  height: 100px;
+  -webkit-transform: rotate3d(1, 0, 0, 270deg) translate3d(0px, 0px, 50px);
+  transform: rotate3d(1, 0, 0, 270deg) translate3d(0px, 0px, 50px);
+}
+.cube__item_back {
+  -webkit-transform: rotate3d(0, 1, 0, 180deg) translate3d(0px, 0px, 50px);
+  transform: rotate3d(0, 1, 0, 180deg) translate3d(0px, 0px, 50px);
+}
+
 .port__github-link {
   display: inline-block;
   margin-bottom: 10px;
@@ -136,7 +124,18 @@ BODY {
 }
 .port__list {
   position: relative;
-  margin-top: 40px;
+  margin: 0 25px;
+  opacity: 0;
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
+  transition: opacity 0.2s, -webkit-transform 0.3s;
+  transition: transform 0.3s, opacity 0.2s;
+  transition: transform 0.3s, opacity 0.2s, -webkit-transform 0.3s;
+}
+.port__list_visible {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
 }
 .port__title {
   font-family: 'LeagueGothicRegular', Arial, Helvetica, sans-serif;
@@ -147,14 +146,14 @@ BODY {
   font-weight: normal;
 }
 .port__item {
-  display: block;
-  float: left;
+  display: inline-block;
   margin: 10px 5px;
   padding: 15px;
   width: 330px;
   background: #fff;
   border-radius: 4px;
   border: 1px #ddd solid;
+  position: relative;
 }
 .port_col2 {
   width: 705px;
@@ -201,7 +200,8 @@ BODY {
   display: block;
   position: absolute;
   width: 100%;
-  bottom: -35px;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
   text-align: center;
   font-size: 15px;
   text-indent: 10px;
@@ -210,18 +210,20 @@ BODY {
   font-family: Helvetica, sans-serif;
   line-height: 35px;
   height: 35px;
-  box-shadow: 0 -2px 6px rgba(0,0,0,0.1) inset;
-  transition: bottom, background 0.3s, 0.3s cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: background 0.3s, -webkit-transform 0.3s;
+  transition: transform 0.3s, background 0.3s;
+  transition: transform 0.3s, background 0.3s, -webkit-transform 0.3s;
 }
 .port__link:hover {
   border-color: #9db281;
 }
 .port__link:hover .port__img {
-  margin-top: -10px;
-  margin-bottom: 10px;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 .port__link:hover .port__to {
-  bottom: 0;
+  -webkit-transform: translateY(-35px);
+          transform: translateY(-35px);
 }
 .port_pet .port__link:hover {
   border-color: #47bfa2;
@@ -229,7 +231,6 @@ BODY {
 .port_pet .port__link:hover .port__to {
   background: #173a32;
 }
-/* End | Portfolio */
 
 * {
   margin: 0;
@@ -238,13 +239,33 @@ BODY {
 .clearfix:before,
 .clearfix:after {
   display: table;
-  content: "";
+  content: '';
 }
 .clearfix:after {
   clear: both;
 }
-.lt-ie8 .clearfix {
-  zoom: 1;
+
+::-webkit-scrollbar {
+  margin-right: 5px;
+  background-color: #ddd;
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: 0 0 2px #ccc;
+}
+::-webkit-scrollbar-thumb {
+  border: 1px #eee solid;
+  border-radius: 15px;
+  background: #777;
+  box-shadow: 0 0 8px #555 inset;
+  transition: all 0.3s ease-out;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #bbb;
+  box-shadow: 0 0 8px #999 inset;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #999;
 }
 
 .logo_wrap {
@@ -253,7 +274,7 @@ BODY {
   height: 135px;
   overflow: hidden;
 }
-#wavewrapper {
+.wavewrapper {
   height: 38px;
   overflow: hidden;
   position: absolute;
@@ -262,14 +283,14 @@ BODY {
   -webkit-animation: waves 5s ease-in-out infinite;
   animation: waves 5s ease-in-out infinite;
 }
-#waves {
+.waves {
   width: 150%;
   height: 40px;
   background: url("/assets/img/waves.png") repeat-x;
   -webkit-animation: waves-linear 4s linear infinite;
   animation: waves-linear 4s linear infinite;
 }
-#ship {
+.ship {
   position: absolute;
   left: 50%;
   top: 24px;

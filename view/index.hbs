@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>Portfolio | Vadim Zhulanov - Front-end Developer</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="front-end develop">
+    <meta name="keywords" content="front-end developer, front-end development, javascript developer, javascript development">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Portfolio | Vadim Zhulanov - Front-end Developer">
+    <meta property="og:url" content="http://maiordom.github.io">
+    <meta property="og:description" content="Vadim Zhulanov is a Front-end Developer.">
+
+    <link rel="stylesheet" type="text/css" href="dist/domino.css">
+</head>
+
+<body class="port">
+
+    <div class="port__wrapper">
+        <div class="head clearfix">
+            <div class="cube-wrapper">
+                {{> cube}}
+            </div>
+            {{> maiordom}}
+        </div>
+        <div class="port__list">
+            {{> list}}
+        </div>
+    </div>
+
+    <div class="logo logo_wrap">
+        <div class="wavewrapper">
+            <div class="waves"></div>
+        </div>
+        <a href="http://validator.w3.org/check?uri=maiordom.github.io" target="_blank">
+            <div class="ship"></div>
+        </a>       
+    </div>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/TimelineMax.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/TweenMax.min.js"></script>
+    <script type="text/javascript" src="assets/js/lib/masonry.pkgd.min.js"></script>
+    <script type="text/javascript" src="dist/domino.js"></script>
+
+    {{> metrika}}
+
+</body>
+
+</html>

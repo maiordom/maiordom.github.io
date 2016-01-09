@@ -1,29 +1,27 @@
-(function($, window, undefined) { //eslint-disable-line
-    'use strict';
+'use strict';
 
-    var DBItem;
+let Type;
 
-    var Type;
+let GitHub = {
+    src: 'assets/img/github_icon.png',
+    width: 30,
+    height: 30
+};
 
-    var GitHub = {
-        src: 'assets/img/github_icon.png',
-        width: 30,
-        height: 30
-    };
+let Single = {
+    className: 'port_pet',
+    width: 320,
+    height: 320
+};
 
-    var Single = {
-        className: 'port_pet',
-        width: 320,
-        height: 320
-    };
+let Double = {
+    className: 'port_pet port_col2',
+    width: 695,
+    height: 320
+};
 
-    var Double = {
-        className: 'port_pet port_col2',
-        width: 695,
-        height: 320
-    };
-
-    var DB = [{
+let DB = [
+    {
         type: 'single',
         title: 'Sindel',
         gitHub: {
@@ -33,7 +31,8 @@
             link: 'http://sati.16mb.com/sindel/',
             src: 'assets/img/git.sindel.png'
         }
-    }, {
+    },
+    {
         type: 'double',
         title: 'Yahiko - Content Slider',
         gitHub: {
@@ -43,7 +42,8 @@
             link: 'http://sati.16mb.com/yahiko/',
             src: 'assets/img/git.yahiko.png'
         }
-    }, {
+    },
+    {
         type: 'single',
         title: 'iSlider',
         gitHub: {
@@ -53,7 +53,8 @@
             link: 'http://sati.16mb.com/islider/',
             src: 'assets/img/git.islider.png'
         }
-    }, {
+    },
+    {
         type: 'double',
         title: 'Chess Engine',
         gitHub: {
@@ -63,7 +64,8 @@
             link: 'http://sati.16mb.com/chess/',
             src: 'assets/img/git.chess.jpg'
         }
-    }, {
+    },
+    {
         type: 'single',
         title: 'Dark Menu',
         gitHub: {
@@ -73,7 +75,8 @@
             link: 'http://codepen.io/maiordom/pen/LwIkD',
             src: 'assets/img/dark-menu.jpg'
         }
-    }, {
+    },
+    {
         type: 'double',
         title: 'Am',
         gitHub: {
@@ -83,7 +86,8 @@
             link: 'http://sati.16mb.com/am/',
             src: 'assets/img/git.am.png'
         }
-    }, {
+    },
+    {
         type: 'single',
         title: 'Counter',
         gitHub: {
@@ -93,7 +97,8 @@
             link: 'http://sati.16mb.com/counter/',
             src: 'assets/img/counter.jpg'
         }
-    }, {
+    },
+    {
         type: 'double',
         title: 'Buttons Menu',
         gitHub: {
@@ -103,7 +108,8 @@
             link: 'http://codepen.io/maiordom/pen/jEghi',
             src: 'assets/img/dark-hor-menu.jpg'
         }
-    }, {
+    },
+    {
         type: 'single',
         title: 'Table Sorter',
         gitHub: {
@@ -113,7 +119,8 @@
             link: 'http://sati.16mb.com/table-sorter/',
             src: 'assets/img/git.table-sorter.png'
         }
-    }, {
+    },
+    {
         type: 'double',
         title: 'Clock',
         gitHub: {
@@ -123,7 +130,8 @@
             link: 'http://codepen.io/maiordom/full/Cqipw',
             src: 'assets/img/clock.jpg'
         }
-    }, {
+    },
+    {
         type: 'single',
         title: 'Cube3d',
         gitHub: {
@@ -133,7 +141,8 @@
             link: 'http://sati.16mb.com/cube3d/cube.html',
             src: 'assets/img/cube3d.png'
         }
-    }, {
+    },
+    {
         type: 'double',
         title: 'Milena',
         gitHub: {
@@ -144,7 +153,8 @@
             src: 'assets/img/git.milena.png',
             height: 320
         }
-    }, {
+    },
+    {
         type: 'single',
         title: 'Konan',
         gitHub: {
@@ -154,7 +164,8 @@
             link: 'http://sati.16mb.com/konan/',
             src: 'assets/img/konan.png'
         }
-    }, {
+    },
+    {
         type: 'double',
         title: 'Zero',
         gitHub: {
@@ -164,7 +175,8 @@
             link: 'http://sati.16mb.com/zero/',
             src: 'assets/img/git.zero.jpg'
         }
-    }, {
+    },
+    {
         type: 'single',
         title: 'Polygon',
         gitHub: {
@@ -174,7 +186,8 @@
             link: 'http://sati.16mb.com/polygon/',
             src: 'assets/img/git.gmaps-polygon.png'
         }
-    }, {
+    },
+    {
         type: 'double',
         title: 'd3Try',
         gitHub: {
@@ -184,7 +197,8 @@
             link: 'http://sati.16mb.com/d3try/step4/',
             src: 'assets/img/git.d3try.jpg'
         }
-    }, {
+    },
+    {
         type: 'single',
         title: 'Kitana',
         gitHub: {
@@ -194,7 +208,8 @@
             link: 'https://github.com/maiordom/kitana',
             src: 'assets/img/git.kitana.png'
         }
-    }, {
+    },
+    {
         type: 'double',
         title: 'Jade',
         gitHub: {
@@ -204,72 +219,19 @@
             link: 'http://sati.16mb.com/jade/',
             src: 'assets/img/git.jade.jpg'
         }
-    }];
-
-    for (var i = 0, ilen = DB.length; i < ilen; i++) {
-        DBItem = DB[i];
-        Type = DBItem.type === 'single' ? Single : Double;
-        DBItem.className = DBItem.className ? ' ' + Type.className : Type.className;
-        DBItem.demo.width = DBItem.demo.width ? DBItem.demo.width : Type.width;
-        DBItem.demo.height = DBItem.demo.height ? DBItem.demo.height : Type.height;
-        DBItem.gitHub.src = GitHub.src;
-        DBItem.gitHub.width = GitHub.width;
-        DBItem.gitHub.height = GitHub.height;
     }
+];
 
-    DB.tmpl = '' +
-        '<div class="port__item ${className}">' +
-            '<a class="port__github-link" target="_blank" href="${gitHub.link}">' +
-                '<h2 class="port__title">${title}</h2>' +
-                '<span class="port__github">' +
-                    '<img src="${gitHub.src}" width="${gitHub.width}" height="${gitHub.height}" alt="">' +
-                '</span>' +
-            '</a>' +
-            '<a class="port__link" href="${demo.link}" target="_blank">' +
-                '<img class="port__img" src="${demo.src}" width="${demo.width}" height="${demo.height}" alt="">' +
-               '<p class="port__to">Visit demo</p>' +
-            '</a>' +
-        '</div>'
-    ;
+DB.forEach(function(item) {
+    Type = item.type === 'single' ? Single : Double;
+    item.className = item.className ? ' ' + Type.className : Type.className;
 
-    DB.read = function(obj, parent, propName, callback) {
-        parent = parent ? parent + '.' : '';
-        for (var i in obj) {
-            if (typeof obj[i] === 'object') {
-                DB.read(obj[i], parent + i, propName, callback);
-            } else if (propName === parent + i) {
-                callback(obj[i]);
-            }
-        }
-    };
+    item.demo.width = item.demo.width ? item.demo.width : Type.width;
+    item.demo.height = item.demo.height ? item.demo.height : Type.height;
 
-    DB.clear = function(propName) {
-        return propName.replace(/\$|\{|\}/gi, '');
-    };
+    item.gitHub.src = GitHub.src;
+    item.gitHub.width = GitHub.width;
+    item.gitHub.height = GitHub.height;
+});
 
-    DB.renderItem = function(vars, data) {
-        var item = DB.tmpl;
-
-        vars.forEach(function(varsItem) {
-            DB.read(data, '', DB.clear(varsItem), function(value) {
-                item = item.replace(varsItem, value);
-            });
-        });
-
-        return item;
-    };
-
-    DB.render = function(el) {
-        var tmpl = [];
-        var vars = DB.tmpl.match(/\$\{[a-zA-Z\.]*\}/gi);
-
-        DB.forEach(function(dbItem) {
-            tmpl.push(DB.renderItem(vars, dbItem));
-        });
-
-        el.append(tmpl.join(''));
-    };
-
-    window.DB = DB;
-
-})(jQuery, window, undefined); //eslint-disable-line
+exports.DB = DB;

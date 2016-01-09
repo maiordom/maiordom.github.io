@@ -1,47 +1,50 @@
 @import 'nib'
 
-cubeWidth = 75px
-cubeHeight = 75px
+cubeWidth = 100px
+cubeHeight = 100px
+
+
+.cube-wrapper 
+    position absolute
+    left -160px
+    top -12px
+    display none
+    perspective 800px
+    perspective-origin -100px -200px
 
 .cube
     transform-style preserve-3d
     transition transform 3s
     transform rotateY(0deg) rotateX(0deg) rotateZ(0deg)
+    
+    &_rotate
+        transform rotateX(0deg) rotateY(190deg) rotateZ(0deg)
 
     position relative
     width cubeWidth
     height cubeHeight
 
-.cube-
-
-    &wrapper 
-        position absolute
-        left -120px
-        display none
-        perspective 800px
-        perspective-origin -100px -200px
-
-    &item
+    &__item
         width cubeWidth
         height cubeHeight
         position absolute
 
-    &front
+    &__item_front
         transform rotate3d(0, 0, 0, 0deg) translate3d(0px, 0px, cubeWidth / 2)
 
-    &right
+    &__item_right
         transform rotate3d(0, 1, 0, 90deg) translate3d(0px, 0px, cubeWidth / 2)
 
-    &left
+    &__item_left
         transform rotate3d(0, 1, 0, 270deg) translate3d(0px, 0px, cubeWidth / 2)
 
-    &top
+    &__item_top
         height cubeWidth
         transform rotate3d(1, 0, 0, 90deg) translate3d(0px, 0px, cubeWidth / 2)
 
-    &bottom
+    &__item_bottom
         height cubeWidth
         transform rotate3d(1, 0, 0, 270deg) translate3d(0px, 0px, cubeWidth / 2)
 
-    &back
+    &__item_back
         transform rotate3d(0, 1, 0, 180deg) translate3d(0px, 0px, cubeWidth / 2)
