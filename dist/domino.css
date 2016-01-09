@@ -112,10 +112,12 @@ BODY {
 .port__github-link {
   display: inline-block;
   margin-bottom: 10px;
+  position: relative;
 }
 .port__github {
-  vertical-align: middle;
-  margin-left: 7px;
+  position: absolute;
+  right: -40px;
+  top: 5px;
 }
 .port__wrapper {
   position: relative;
