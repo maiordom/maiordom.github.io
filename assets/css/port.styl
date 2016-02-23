@@ -89,7 +89,7 @@
         text-align center
         font-size 15px
         text-indent 10px
-        background #111
+        background rgba(0, 126, 255, 0.55)
         color #FFF
         font-family Helvetica, sans-serif
         line-height 35px
@@ -99,14 +99,23 @@
     &__link:hover
         border-color #9DB281
 
-    &__link:hover &__img
-        transform translateY(-10px)
-
     &__link:hover &__to
         transform translateY(-35px)
 
-    &_pet &__link:hover
-        border-color #47bfa2
+    &_pet:nth-child(n) &__link:hover
+        border-color rgba(255, 187, 101, 0.5)
 
-    &_pet &__link:hover &__to
-        background #173a32
+    &_pet:nth-child(n) &__to
+        background rgba(255, 187, 101, 0.8)
+
+    &_pet:nth-child(2n) &__link:hover
+        border-color rgba(14, 181, 141, 0.5)
+
+    &_pet:nth-child(2n) &__to
+        background rgba(14, 181, 141, 0.8)
+
+    &_pet:nth-child(3n) &__link:hover
+        border-color rgba(104, 154, 247, 0.5)
+
+    &_pet:nth-child(3n) &__to
+        background rgba(104, 154, 247, 0.8)

@@ -45,7 +45,9 @@
     "url": "https://github.com/maiordom/maiordom.github.io.git"
   },
   "scripts": {
-    "lint": "node pre-commit.js"
+    "lint": "node pre-commit.js",
+    "postinstall": "rm -f .jshintignore .jshintrc",
+    "validate": "npm ls"
   },
   "version": "0.1.0"
 }

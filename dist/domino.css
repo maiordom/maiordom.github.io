@@ -207,7 +207,7 @@ BODY {
   text-align: center;
   font-size: 15px;
   text-indent: 10px;
-  background: #111;
+  background: rgba(0,126,255,0.55);
   color: #fff;
   font-family: Helvetica, sans-serif;
   line-height: 35px;
@@ -219,19 +219,27 @@ BODY {
 .port__link:hover {
   border-color: #9db281;
 }
-.port__link:hover .port__img {
-  -webkit-transform: translateY(-10px);
-          transform: translateY(-10px);
-}
 .port__link:hover .port__to {
   -webkit-transform: translateY(-35px);
           transform: translateY(-35px);
 }
-.port_pet .port__link:hover {
-  border-color: #47bfa2;
+.port_pet:nth-child(n) .port__link:hover {
+  border-color: rgba(255,187,101,0.5);
 }
-.port_pet .port__link:hover .port__to {
-  background: #173a32;
+.port_pet:nth-child(n) .port__to {
+  background: rgba(255,187,101,0.8);
+}
+.port_pet:nth-child(2n) .port__link:hover {
+  border-color: rgba(14,181,141,0.5);
+}
+.port_pet:nth-child(2n) .port__to {
+  background: rgba(14,181,141,0.8);
+}
+.port_pet:nth-child(3n) .port__link:hover {
+  border-color: rgba(104,154,247,0.5);
+}
+.port_pet:nth-child(3n) .port__to {
+  background: rgba(104,154,247,0.8);
 }
 
 * {
