@@ -22,6 +22,7 @@ let Double = {
 
 let DB = [
     {
+        name: 'sindel',
         type: 'single',
         title: 'Sindel',
         gitHub: {
@@ -33,6 +34,7 @@ let DB = [
         }
     },
     {
+        name: 'yahiko',
         type: 'double',
         title: 'Yahiko - Content Slider',
         gitHub: {
@@ -44,6 +46,7 @@ let DB = [
         }
     },
     {
+        name: 'islider',
         type: 'single',
         title: 'iSlider',
         gitHub: {
@@ -55,6 +58,7 @@ let DB = [
         }
     },
     {
+        name: 'chess',
         type: 'double',
         title: 'Chess Engine',
         gitHub: {
@@ -110,10 +114,11 @@ let DB = [
         }
     },
     {
+        name: 'table-sorter',
         type: 'single',
         title: 'Table Sorter',
         gitHub: {
-            link: 'https://github.com/maiordom/tablse-sorter'
+            link: 'https://github.com/maiordom/table-sorter'
         },
         demo: {
             link: 'http://sati.16mb.com/table-sorter/',
@@ -132,6 +137,7 @@ let DB = [
         }
     },
     {
+        name: 'cube3d',
         type: 'single',
         title: 'Cube3d',
         gitHub: {
@@ -143,6 +149,7 @@ let DB = [
         }
     },
     {
+        name: 'milena',
         type: 'double',
         title: 'Milena',
         gitHub: {
@@ -155,6 +162,7 @@ let DB = [
         }
     },
     {
+        name: 'konan',
         type: 'single',
         title: 'Konan',
         gitHub: {
@@ -166,6 +174,7 @@ let DB = [
         }
     },
     {
+        name: 'zero',
         type: 'double',
         title: 'Zero',
         gitHub: {
@@ -177,6 +186,7 @@ let DB = [
         }
     },
     {
+        name: 'gmaps-polygon',
         type: 'single',
         title: 'Polygon',
         gitHub: {
@@ -188,6 +198,7 @@ let DB = [
         }
     },
     {
+        name: 'd3try',
         type: 'double',
         title: 'd3Try',
         gitHub: {
@@ -199,6 +210,7 @@ let DB = [
         }
     },
     {
+        name: 'kitana',
         type: 'single',
         title: 'Kitana',
         gitHub: {
@@ -210,6 +222,7 @@ let DB = [
         }
     },
     {
+        name: 'jade',
         type: 'double',
         title: 'Jade',
         gitHub: {
