@@ -80,7 +80,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             value: function setFace() {
                 var itemsTimeline = [];
 
-                faceWrapper.appendTo(logotype).show();
+                faceWrapper.show();
 
                 if (!Utils.has3dSupport() || Utils.isIE10()) {
                     return;
