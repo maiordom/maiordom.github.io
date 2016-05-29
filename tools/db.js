@@ -76,8 +76,8 @@ let DB = [
             link: 'https://github.com/maiordom/css-live/tree/master/task17'
         },
         demo: {
-            link: 'http://codepen.io/maiordom/pen/LwIkD',
-            src: 'assets/img/dark-menu.jpg'
+            link: 'http://codepen.io/maiordom/full/LwIkD',
+            src: 'assets/img/git.dark-menu.png'
         }
     },
     {
