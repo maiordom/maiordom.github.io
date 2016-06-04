@@ -132,7 +132,7 @@ let DB = [
             link: 'https://github.com/maiordom/css-live/tree/master/clock'
         },
         demo: {
-            link: 'http://codepen.io/maiordom/full/Cqipw',
+            link: 'http://codepen.io/maiordom/pen/Cqipw',
             src: 'assets/img/clock.jpg'
         }
     },
