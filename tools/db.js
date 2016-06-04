@@ -98,7 +98,7 @@ let DB = [
             link: 'https://github.com/maiordom/css-live/tree/master/counter'
         },
         demo: {
-            link: 'http://sati.16mb.com/counter/',
+            link: 'https://codepen.io/maiordom/pen/JKdBej',
             src: 'assets/img/counter.jpg'
         }
     },
